@@ -28,5 +28,5 @@ public interface UserMapper {
     void updateAvatar(String avatarUrl,Integer id);
 
     @Update("update user set password=#{md5String},update_time=now() where id=#{id}")
-    void updatePwd(String md5String, Integer id);
+    void updatePwd(@Param("md5String") String md5String, @Param("id") Integer id);
 }
